@@ -1,10 +1,16 @@
 <?php
-$filename = "example.txt";
+
+$directory = "group8";
+$filename = "$directory/ff.txt";
+
+if (!is_dir($directory)) {
+    mkdir($directory, 0777, true);
+    echo "Directory 'group8' created.\n";
+}
 
 if (file_exists($filename)) {
     echo "File exists. Reading contents...\n";
     
-  
     $content = file_get_contents($filename);
     echo "Contents of the file:\n$content\n";
     
